@@ -2,11 +2,12 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-07 17:31:29
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-07 18:04:26
+ * @LastEditTime: 2023-07-08 00:18:19
  * @Description: 
  * @FilePath: \v3_ts_shop\src\utils\request.ts
  */
 import axios from 'axios'
+import useUserStore from '../store/modules/user'
 import router from '@/router'
 
 // 导出基准地址，原因：其他地方不是通过axios发请求的地方用上基准地址
@@ -22,4 +23,12 @@ instance.interceptors.request.use(config => {
     // 进行请求配置的修改
     // 如果本地有token就在头部携带
     // 1. 获取用户信息对象
+    const userStore = useUserStore()
+    if (userStore.userInfo.token) {
+        // 设置token
+        config.headers.Authorization = `Bearer${userStore.userInfo.token}`
+    }
+    return config
+}, err => {
+    return Promise.reject(err)
 })

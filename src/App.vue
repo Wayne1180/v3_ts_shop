@@ -1,30 +1,27 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
+<!--
+ * @Author: 徐腾龙
+ * @Date: 2023-07-07 20:24:25
+ * @LastEditors: 徐腾龙
+ * @LastEditTime: 2023-07-08 00:11:12
+ * @Description: 
+ * @FilePath: \v3_ts_shop\src\App.vue
+-->
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    {{ store.userInfo }}
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script lang="ts">
+import useUserStore from "./store/modules/user";
+export default {
+  setup() {
+    const store = useUserStore();
+    return {
+      store,
+    };
+  },
+};
+</script>
+
+<style scoped></style>
