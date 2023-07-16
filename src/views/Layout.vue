@@ -2,13 +2,14 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-09 21:24:05
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-12 22:08:08
+ * @LastEditTime: 2023-07-16 11:17:37
  * @Description: 
  * @FilePath: \v3_ts_shop\src\views\Layout.vue
 -->
 <template>
     <top-nav></top-nav>
     <layout-header></layout-header>
+    <StickyHeader></StickyHeader>
     <main>
         <!-- 二级路由 -->
         <router-view></router-view>
@@ -19,6 +20,7 @@
 <script setup lang="ts">
 import TopNav from '@/components/Layout/TopNav/TopNav.vue'
 import LayoutHeader from '@/components/Layout/Header/Header.vue'
+import StickyHeader from '@/components/HeaderSticky/index.vue'
 import LayoutFooter from '@/components/Layout/Footer/Footer.vue'
 // 获取category的store对象
 </script>
