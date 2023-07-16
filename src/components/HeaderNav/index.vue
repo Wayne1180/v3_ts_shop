@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-12 20:31:28
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-12 22:15:48
+ * @LastEditTime: 2023-07-16 10:15:28
  * @Description: 
  * @FilePath: \v3_ts_shop\src\components\HeaderNav\index.vue
 -->
@@ -27,10 +27,12 @@
 
 <script setup lang="ts" >
 import useCateStore from '@/store/modules/category';
+import { computed } from 'vue';
 const cateStore = useCateStore() 
 cateStore.getList()
-const list = cateStore.list
-console.log("🚀 ~ file: index.vue:33 ~ list:", list)
+const list = computed(() => {
+  return cateStore.list
+})
 </script>
 
 <style scoped lang='scss'>

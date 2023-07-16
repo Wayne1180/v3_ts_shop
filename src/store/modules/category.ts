@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-12 21:52:27
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-12 22:13:25
+ * @LastEditTime: 2023-07-16 10:16:41
  * @Description: 
  * @FilePath: \v3_ts_shop\src\store\modules\category.ts
  */
@@ -22,7 +22,6 @@ const useCateStore = defineStore("Cate", {
        async getList () {
         const { result } = await findAllCategory()
         this.list = result
-        console.log("🚀 ~ file: category.ts:25 ~ getList ~ this.list:", this.list)
        }
     }
 })
