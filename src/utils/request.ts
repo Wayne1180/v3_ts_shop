@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-07 17:31:29
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-09 21:19:06
+ * @LastEditTime: 2023-07-16 15:53:02
  * @Description: 
  * @FilePath: \v3_ts_shop\src\utils\request.ts
  */
@@ -41,7 +41,7 @@ instance.interceptors.response.use(res => res.data, err => {
         // 1. 清空无效用户信息
         // 2. 跳转到登录页
         // 3. 跳转需要传参（当前路由地址）给登录页码
-        userStore.setUser({})
+        userStore.setUser(null)
         // js模块中：router.currentRoute.value.fullPath 就是当前路由地址，router.currentRoute是ref响应式数据
         const fullPath = encodeURIComponent(router.currentRoute.value.fullPath)
         router.push('/login?redirectUrl=' + fullPath)

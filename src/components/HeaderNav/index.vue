@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-12 20:31:28
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-16 10:47:35
+ * @LastEditTime: 2023-07-16 16:38:43
  * @Description: 
  * @FilePath: \v3_ts_shop\src\components\HeaderNav\index.vue
 -->
@@ -35,15 +35,16 @@
 <script setup lang="ts">
 import useCateStore from "@/store/modules/category";
 import { computed } from "vue";
+import { Category } from "@/store/modules/types/type";
 const cateStore = useCateStore();
 cateStore.getList();
 const list = computed(() => {
   return cateStore.list;
 });
-const show = (item: object) => {
+const show = (item: Category) => {
   cateStore.show(item);
 };
-const hide = (item: object) => {
+const hide = (item: Category) => {
   cateStore.hide(item);
 };
 </script>

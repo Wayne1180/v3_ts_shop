@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-07 23:29:05
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-09 21:11:45
+ * @LastEditTime: 2023-07-16 15:52:35
  * @Description: 
  * @FilePath: \v3_ts_shop\src\store\modules\user.ts
  */
@@ -13,13 +13,12 @@ const useUserStore = defineStore("User", {
   // 小仓库存储数据地方
   state: () => {
     return {
-      userInfo: {} as profile | {}
+      userInfo: null as profile | null
     };
   },
-  getters: {},
   actions: {
-    setUser (info: profile | {}) {
-        this.userInfo = info || {}
+    setUser (info: profile | null) {
+        this.userInfo = info
     }
   }
 });
