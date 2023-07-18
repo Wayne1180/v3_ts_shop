@@ -2,13 +2,13 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-11 20:57:21
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-12 20:36:34
+ * @LastEditTime: 2023-07-18 20:38:26
  * @Description: 
  * @FilePath: \v3_ts_shop\src\components\Layout\Header\Header.vue
 -->
 <template>
   <header class="app-header">
-    <div class="container-header">
+    <div class="container">
       <h1 class="logo"><RouterLink to="/">小兔鲜</RouterLink></h1>
       <header-nav></header-nav>
       <div class="search">
@@ -31,10 +31,9 @@ import HeaderNav from "@/components/HeaderNav/index.vue";
 <style lang="scss" scoped>
 .app-header {
   background-color: #fff;
-  .container-header {
+  .container {
     display: flex;
     align-items: center;
-
     .logo {
       width: 200px;
       a {

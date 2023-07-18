@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-09 21:24:05
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-16 11:17:37
+ * @LastEditTime: 2023-07-18 20:08:51
  * @Description: 
  * @FilePath: \v3_ts_shop\src\views\Layout.vue
 -->
@@ -10,10 +10,10 @@
     <top-nav></top-nav>
     <layout-header></layout-header>
     <StickyHeader></StickyHeader>
-    <main>
+    <div class="container-body">
         <!-- 二级路由 -->
         <router-view></router-view>
-    </main>
+    </div>
     <layout-footer></layout-footer>
 </template>
 
@@ -26,5 +26,7 @@ import LayoutFooter from '@/components/Layout/Footer/Footer.vue'
 </script>
 
 <style scoped>
-
+.container-body {
+    min-height: 600px;
+}
 </style>

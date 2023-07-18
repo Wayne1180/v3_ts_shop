@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-17 22:41:48
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-17 23:27:44
+ * @LastEditTime: 2023-07-18 20:17:48
  * @Description: 
  * @FilePath: \v3_ts_shop\src\components\Library\carousel.vue
 -->
@@ -20,10 +20,10 @@
         </RouterLink>
       </li>
     </ul>
-    <a href="javascript:;" class="carousel-btn prev"
+    <a href="javascript:;" class="carousel-btn prev" @click="toggle(-1)"
       ><i class="iconfont icon-angle-left"></i
     ></a>
-    <a href="javascript:;" class="carousel-btn next"
+    <a href="javascript:;" class="carousel-btn next" @click="toggle(1)"
       ><i class="iconfont icon-angle-right"></i
     ></a>
     <div class="carousel-indicator">
@@ -55,7 +55,7 @@ const props = defineProps({
 // 默认显示的图片的索引
 const index = ref(0);
 // 自动播放
-let timer = null;
+let timer: any = null;
 const autoPlayFn = () => {
   clearInterval(timer); // 清除定时器之前的跟踪，防止溢写。 这个任务应该
   timer = setInterval(() => {
@@ -84,7 +84,7 @@ const start = () => {
   }
 };
 // 上一张下一张
-const toggle = (step) => {
+const toggle = (step: number) => {
   const newIndex = index.value + step;
   if (newIndex >= props.sliders.length) {
     index.value = 0;
@@ -180,4 +180,5 @@ onUnmounted(() => {
     }
   }
 }
+
 </style>

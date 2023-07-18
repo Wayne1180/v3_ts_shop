@@ -2,7 +2,7 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-17 22:43:13
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-17 23:26:55
+ * @LastEditTime: 2023-07-18 20:36:55
  * @Description: 
  * @FilePath: \v3_ts_shop\src\views\home\components\banner.vue
 -->
@@ -22,11 +22,19 @@ findBanner().then((data: any) => {
 </script>
 
 <style lang="scss" scoped>
+.container-banner {
+  width: 1240px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 98;
+}
 .container-carousel {
-  ::v-deep .carousel-btn.prev {
+  :deep .carousel-btn.prev {
     left: 270px;
   }
-  ::v-deep .carousel-indicator {
+  :deep .carousel-indicator {
     padding-left: 250px;
   }
 }

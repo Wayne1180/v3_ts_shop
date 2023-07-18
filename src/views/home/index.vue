@@ -2,19 +2,17 @@
  * @Author: 徐腾龙
  * @Date: 2023-07-09 21:31:16
  * @LastEditors: 徐腾龙
- * @LastEditTime: 2023-07-17 22:44:23
+ * @LastEditTime: 2023-07-18 20:14:32
  * @Description: 
  * @FilePath: \v3_ts_shop\src\views\home\index.vue
 -->
 <template>
-  <div class="container-home">
     <div class="home-entry">
-      <div class="content">
+      <div class="container">
         <category></category>
         <banner></banner>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
